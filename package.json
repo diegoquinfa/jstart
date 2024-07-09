@@ -1,0 +1,31 @@
+{
+  "name": "jstart",
+  "version": "0.0.1",
+  "description": "A CLI application for automating the setup of new JavaScript projects.",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "test": "vitest"
+  },
+  "keywords": [
+    "template",
+    "JavaScript",
+    "CLI"
+  ],
+  "author": "Diego Quintana Fajardo <diegoquinfa@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631",
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "nodemon": "^3.1.4",
+    "prettier": "3.3.2",
+    "standard": "^17.1.0",
+    "vitest": "^2.0.1"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  }
+}
