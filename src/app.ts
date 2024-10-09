@@ -2,9 +2,9 @@
 
 import { Command } from 'commander'
 import { setup } from './utils'
-const program = new Command()
+const cli = new Command()
 
-program
+cli
   .name('jstart')
   .description(
     'A CLI application for automating the setup of new JavaScript projects.'
@@ -22,6 +22,6 @@ program
 //     console.log(str.split(options.separator, limit))
 //   })
 
-program.parse()
+cli.parse()
 
-setup(program.opts())
+setup(cli.opts())
