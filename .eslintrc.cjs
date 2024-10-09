@@ -3,7 +3,12 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: ['standard', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'standard',
+    'prettier'
+  ],
   overrides: [
     {
       env: {
@@ -15,6 +20,8 @@ module.exports = {
       }
     }
   ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
