@@ -4,12 +4,13 @@ import {
   getTemplateDirs,
   jstartConfigPath,
   TemplateOptions
-} from './getTemplateDirs'
+} from './getTemplateDirs.js'
+import chalk from 'chalk'
 
 const setup = async (options: OptionValues) => {
   try {
     const projectName = await input({
-      message: 'project name: ',
+      message: 'project name:',
       required: true
     })
 
@@ -17,9 +18,18 @@ const setup = async (options: OptionValues) => {
 
     let answer: TemplateOptions[] | string = op
 
-    while (Array.isArray(answer)) {
+    for (let i = 0; Array.isArray(answer); i++) {
+      const message = (num: number): string => {
+        if (num === 0) return 'Select environment'
+        else if (num === 1) return 'Select framework'
+        else return 'Select variant'
+      }
+
       answer = await select({
-        message: 'Select a template',
+        theme: {
+          prefix: chalk.bold.blue('-')
+        },
+        message: message(i),
         choices: answer
       })
     }
@@ -34,7 +44,8 @@ const setup = async (options: OptionValues) => {
       return console.log('Bye!')
     }
 
-    console.log('something was wrong! :(')
+    console.log(chalk.bold.red('something was wrong! :('))
+    console.log(err)
   }
 }
 

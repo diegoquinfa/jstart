@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander'
-import { setup } from './utils'
+import { setup } from './utils/index.js'
 const cli = new Command()
 
 cli

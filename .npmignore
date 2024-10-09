@@ -1,0 +1,10 @@
+.git
+node_modules
+src
+tests
+.eslintrc.cjs
+.gitignore
+.prettierrc
+pnpm-lock.yaml
+tsconfig.json
+vitest.config.ts

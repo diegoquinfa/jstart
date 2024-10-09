@@ -1,2 +1,2 @@
-export { setup } from './setup'
-export { getTemplateDirs } from './getTemplateDirs'
+export { setup } from './setup.js'
+export { getTemplateDirs } from './getTemplateDirs.js'
