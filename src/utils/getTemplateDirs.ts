@@ -39,9 +39,4 @@ const getTemplateDirs = async (
   return result
 }
 
-// ;(async () => {
-//   const a = await getTemplateDirs(jstartConfigPath)
-//   console.log(JSON.stringify(a, undefined, 2))
-// })()
-
 export { getTemplateDirs, jstartConfigPath, TemplateOptions }
