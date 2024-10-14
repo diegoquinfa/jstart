@@ -1,6 +1,6 @@
 {
   "name": "jstart",
-  "version": "0.0.2",
+  "version": "0.0.3".
   "description": "A CLI application for automating the setup of new JavaScript projects.",
   "main": "dist/app.js",
   "bin": "dist/app.js",
@@ -37,6 +37,7 @@
   "dependencies": {
     "@inquirer/prompts": "^5.3.8",
     "chalk": "^5.3.0",
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "ora": "^8.1.0"
   }
 }

@@ -9,7 +9,7 @@ cli
   .description(
     'A CLI application for automating the setup of new JavaScript projects.'
   )
-  .version('0.0.1')
+  .version('0.0.3')
 
 // program
 //   .command('split')

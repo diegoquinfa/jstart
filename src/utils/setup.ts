@@ -1,3 +1,5 @@
+import { cp } from 'node:fs/promises'
+import { join } from 'node:path'
 import { OptionValues } from 'commander'
 import { input, select } from '@inquirer/prompts'
 import {
@@ -6,8 +8,10 @@ import {
   TemplateOptions
 } from './getTemplateDirs.js'
 import chalk from 'chalk'
+import ora from 'ora'
 
 const setup = async (options: OptionValues) => {
+  const spinner = ora('Wait...\n\n')
   try {
     const projectName = await input({
       message: 'project name:',
@@ -34,6 +38,14 @@ const setup = async (options: OptionValues) => {
       })
     }
 
+    spinner.start()
+
+    await cp(answer, join(process.cwd(), projectName), {
+      recursive: true,
+      force: false
+    })
+
+    spinner.succeed()
     console.log(answer)
 
     if (options) {
@@ -45,7 +57,9 @@ const setup = async (options: OptionValues) => {
     }
 
     console.log(chalk.bold.red('something was wrong! :('))
-    console.log(err)
+    spinner.fail()
+  } finally {
+    spinner.stop()
   }
 }
 
