@@ -1,6 +1,6 @@
 {
   "name": "jstart",
-  "version": "0.0.3".
+  "version": "0.0.3",
   "description": "A CLI application for automating the setup of new JavaScript projects.",
   "main": "dist/app.js",
   "bin": "dist/app.js",
